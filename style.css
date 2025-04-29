@@ -3,28 +3,52 @@
   --background: #f5f7fa;
   --radius: 12px;
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: system-ui, Arial, sans-serif;
 }
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); 
+  z-index: -1;
+}
+
+
+
 body {
-  background: var(--background);
+  background: url('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   display: flex;
   justify-content: center;
   padding: 40px;
 }
 
+
 .container {
+  background: rgba(255, 255, 255, 0.5);
   width: 100%;
   max-width: 600px;
+  padding: 24px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+
 h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
   margin-bottom: 24px;
-  text-align: center;
 }
+
 
 .controls {
   margin-bottom: 16px;
@@ -62,6 +86,14 @@ h1 {
   cursor: pointer;
 }
 
+#workoutForm button:hover,
+.card-actions button:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+  transition: all 0.2s ease;
+}
+
+
 .secondary {
   background: #888;
 }
@@ -85,12 +117,11 @@ h1 {
 }
 
 .card-title {
-  font-weight: 600;
-  margin-bottom: 4px;
+  font-size: 1.1rem;
+  color: #222;
 }
-
 .card-meta {
-  font-size: 14px;
+  font-size: 0.9rem;
   color: #555;
 }
 
@@ -109,8 +140,28 @@ h1 {
   background: #e53935;
   color: #fff;
 }
-@media (max-width: 600px) {
-  body {
-    padding: 16px;
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 16px;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
