@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Workout Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Workout Tracker</h1>
+      <section class="controls">
+        <input type="text" id="search" placeholder="Search workouts" />
+      </section>
+      <section id="list"></section>
+      <section class="form-section">
+        <form id="workoutForm">
+          <input type="hidden" id="workoutId" />
+          <input
+            type="text"
+            id="workoutName"
+            placeholder="Workout name"
+            required
+          />
+          <input type="date" id="workoutDate" required />
+          <input
+            type="number"
+            id="workoutDuration"
+            placeholder="Duration (min)"
+            required
+          />
+          <button type="submit" id="submitBtn">Save</button>
+          <button type="button" id="cancelBtn" class="secondary">Cancel</button>
+        </form>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
